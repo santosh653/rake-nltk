@@ -1,9 +1,31 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : python-rake
+# Source Repo         : https://github.com/csurfer/rake-nltk
+# Travis Job Link     : https://travis-ci.com/github/santosh653/rake-nltk
+# Created travis.yml  : No
+# Maintainer          : Santosh Kulkarni <santoshkulkarni70@gmail.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+arch:
+  - amd64
+  - ppc64le
 language: python
+#Excluding python 2.7 on both intel & power.
 python:
   - "2.7"
   - "3.4"
   - "3.5"
   - "3.6"
+jobs:
+ exclude:
+  - python: "2.7"
+    arch: amd64
+  - python: "2.7"
+    arch: ppc64le
+    
 # Command to install dependencies.
 install:
   - "pip install -r requirements.txt"
